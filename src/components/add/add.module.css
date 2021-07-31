@@ -1,0 +1,24 @@
+.add{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 70px;
+    box-sizing: border-box;
+    padding: 25px 20px;
+    border-bottom: 1px solid #d6d6d6;
+    transition: 200ms;
+}
+.add:hover{
+    box-shadow: 0 10px 16px 0 #cccccc33, 0 6px 20px 0 rgb(0 0 0 / 19%);
+}
+
+.input{
+    border: none;
+    padding: 10px 20px;
+    width: 100%;
+    height: 100%;
+    outline: none;
+    color: #333333;
+}

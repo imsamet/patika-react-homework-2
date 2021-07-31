@@ -1,0 +1,21 @@
+.card{
+    width: 100vw;
+    max-height: 100vw;
+    box-sizing: border-box;
+    padding: 100px;
+}
+.content{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    box-sizing: border-box;
+
+    border: 1px solid  #d6d6d6;
+    border-radius: 10px;
+    background-color: #d6d6d666;
+    box-shadow: 0 10px 16px 0 #cccccc33, 0 6px 20px 0 rgb(0 0 0 / 19%);
+    transition: 200ms;
+}
+.content:hover{
+    box-shadow: 0 10px 16px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%)
+}
