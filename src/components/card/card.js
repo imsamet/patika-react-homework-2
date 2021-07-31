@@ -8,13 +8,15 @@ function Card() {
 
     const store = useContext(Context)
 
+    console.log(store.note)
+
     return(
         <div className={Style.card}>
             <div className={Style.content}>
                 <Add/>
                 {
                     store.note.map((value, index) => {
-                        return <Item key={index} note={value.note}/>
+                        return <Item key={index} note={value.note} itemIndex={index}/>
                     })
                 }
             </div>

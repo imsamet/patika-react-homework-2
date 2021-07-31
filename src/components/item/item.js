@@ -1,24 +1,24 @@
-import { useContext, useEffect, useReducer, useRef, useState } from 'react'
+import { useContext, useRef, useState } from 'react'
 import cn from 'classnames'
 import Style from './item.module.css'
 import Context from '../../context/nodeContext'
 
-function Item({note}) {
+function Item({note, itemIndex}) {
 
     const inputRef = useRef()
     const [isActive, setActive] = useState(true)
 
     const store = useContext(Context)
 
-    const InputClick = () => {
+    const handleInputClick = () => {
         setActive(!inputRef.current.checked)
     }
 
-    const CloseClick = () => {
+    const handleCloseClick = () => {
         let newNote = []
 
-        store.note.map((value) => {
-            value.note != note && newNote.push(value)
+        store.note.map((value, index) => {
+            index !== itemIndex && newNote.push(value)
         })
 
         store.setNote(newNote)
@@ -26,7 +26,7 @@ function Item({note}) {
 
     return(
         <div className={Style.item}>
-            <input className={Style.input} type="checkbox" onClick={InputClick} ref={inputRef}/>
+            <input className={Style.input} type="checkbox" onClick={handleInputClick} ref={inputRef}/>
             <span className={Style.checkbox}>
                 <svg
                     width="1em"
@@ -42,7 +42,7 @@ function Item({note}) {
                 </svg>
             </span>
             <h1 className={cn(Style.note, isActive && Style.active)}>{note}</h1>
-            <span className={Style.close} onClick={CloseClick}>×</span>
+            <span className={Style.close} onClick={handleCloseClick}>×</span>
         </div>
     )
 }

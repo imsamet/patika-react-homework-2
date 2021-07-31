@@ -4,12 +4,7 @@ import Card from './components/card/card';
 
 function App() {
 
-  const [note, setNote] = useState([
-    {note: "note 1"},
-    {note: "note 2"},
-    {note: "note 3"},
-    {note: "note 4"}
-  ])
+  const [note, setNote] = useState([])
 
   return (
     <Context.Provider value={{note, setNote}}>
